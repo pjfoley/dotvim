@@ -28,3 +28,6 @@
 [submodule "UltiSnips"]
 	path = UltiSnips
 	url = git://github.com/pjfoley/ultisnips-snippets.git
+[submodule "bundle/vimple"]
+	path = bundle/vimple
+	url = git://github.com/dahu/vimple.git
