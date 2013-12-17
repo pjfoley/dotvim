@@ -43,11 +43,17 @@ set directory=~/tmp
 " When searching for text centre the found line in the middle of the screen
 set so=5
 
-" Turn on the Wild menu
-set wildmenu
+if has ("wildmenu")
+  " Turn on the Wild menu
+  set wildmenu
 
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+  set wildmode=longest,list
+
+  " Ignore stuff
+  set wildignore+=*.o,*.a
+  set wildignore+=*~,*.pyc
+  set wildignore+=*.swp,*.tmp
+endif
 
 " Always show the ruler
 set ruler
@@ -92,6 +98,13 @@ set list
 " Setup what characters to show
 set listchars=""
 set listchars=trail:.
+
+" In cmd mode, + and - vertically enlarge/shrink a split
+
+noremap <silent> = :call WinMove('+')<CR>
+noremap <silent> - :call WinMove('-')<CR>
+noremap <silent> + :call WinMove('>')<CR>
+noremap <silent> _ :call WinMove('<')<CR>
 
 """"""""""""""""""""""""""
 "  => Colors and Scheme  "
@@ -143,6 +156,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>
 
@@ -153,17 +169,8 @@ map <leader>ba :1,1000 bd!<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove" Close the current buffer
-map <leader>bd :Bclose<cr>
-
-" Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
-
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
+
 
 " Map Y to act like D and C, i.e to yank until EOL, rather than act as yy,
 " which is the default
