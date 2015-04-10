@@ -229,7 +229,7 @@ set matchtime=2 " How long to show for in tenths of a second
 "  => Sounds                                  "
 """""""""""""""""""""""""""""""""""""""""""""""
 set noerrorbells
-set novisualbell
+set visualbell
 set t_vb=
 
 " ---------------
