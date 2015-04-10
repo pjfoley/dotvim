@@ -117,7 +117,7 @@ set cursorcolumn
 if has ("autocmd")
   autocmd FocusLost * :set norelativenumber
   autocmd BufLeave * :set norelativenumber
-  autocmd InsertEnter * :set norelativenumber
+  autocmd InsertEnter * :set number
 
   autocmd FocusGained * :set relativenumber
   autocmd BufEnter * :set relativenumber
