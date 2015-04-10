@@ -1,7 +1,3 @@
-" Insert New Line *************************************************************
-map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
-map <Enter> o<ESC>
-
 " Fast saving
 nmap <leader>w :w!<cr>
 
