@@ -21,11 +21,12 @@ let mapleader = "\<space>"
 let g:mapleader = "\<space>"
 
 """""""""""""""""""""""""""""
-" => Setup pathogen plugin  "
+" => Setup vundle plugin  "
 """""""""""""""""""""""""""""
-runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-execute pathogen#helptags()
+
+if filereadable(expand("~/.vim/vimrc.bundles"))
+  source ~/.vim/vimrc.bundles
+endif
 
 " ----------------------------------------
 " Platform Specific Configuration
@@ -126,21 +127,21 @@ else
   set relativenumber " Show relative numbers
 endif
 
-if has("statusline") && !&cp
-  set laststatus=2  " always show the status bar
+" if has("statusline") && !&cp
+"   set laststatus=2  " always show the status bar
 
-  " Start the status line
-  set statusline=%2*%-3.3n%0*\                 " buffer number
-  set statusline+=%f\                          " file name
-  set statusline+=%h%1*%m%r%w%0*               " flags
-  set statusline+=\[%{strlen(&ft)?&ft:'none'}, " filetype
-  set statusline+=%{&encoding},                " encoding
-  set statusline+=%{&fileformat}]              " file format
-  set statusline+=%=                           " right align
-  set statusline+=Line:%l/%L[%p%%]\ \          " Line Number
-  set statusline+=Col:%v\ \                    " Col Number
-  set statusline+=Char:[%b][0x%B]              " current char
-endif
+"   " Start the status line
+"   set statusline=%2*%-3.3n%0*\                 " buffer number
+"   set statusline+=%f\                          " file name
+"   set statusline+=%h%1*%m%r%w%0*               " flags
+"   set statusline+=\[%{strlen(&ft)?&ft:'none'}, " filetype
+"   set statusline+=%{&encoding},                " encoding
+"   set statusline+=%{&fileformat}]              " file format
+"   set statusline+=%=                           " right align
+"   set statusline+=Line:%l/%L[%p%%]\ \          " Line Number
+"   set statusline+=Col:%v\ \                    " Col Number
+"   set statusline+=Char:[%b][0x%B]              " current char
+" endif
 
 """"""""""""""""""""""""""""""
 " => Behaviors               "
