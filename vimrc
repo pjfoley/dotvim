@@ -130,17 +130,21 @@ endif
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
 
-  " Start the status line
-  set statusline=%2*%-3.3n%0*\                 " buffer number
-  set statusline+=%f\                          " file name
-  set statusline+=%h%1*%m%r%w%0*               " flags
-  set statusline+=\[%{strlen(&ft)?&ft:'none'}, " filetype
-  set statusline+=%{&encoding},                " encoding
-  set statusline+=%{&fileformat}]              " file format
-  set statusline+=%=                           " right align
-  set statusline+=Line:%l/%L[%p%%]\ \          " Line Number
-  set statusline+=Col:%v\ \                    " Col Number
-  set statusline+=Char:[%b][0x%B]              " current char
+  if isdirectory(expand("$HOME/.vim/bundle/powerline"))
+    set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim/
+  else
+    " Start the status line
+    set statusline=%2*%-3.3n%0*\                 " buffer number
+    set statusline+=%f\                          " file name
+    set statusline+=%h%1*%m%r%w%0*               " flags
+    set statusline+=\[%{strlen(&ft)?&ft:'none'}, " filetype
+    set statusline+=%{&encoding},                " encoding
+    set statusline+=%{&fileformat}]              " file format
+    set statusline+=%=                           " right align
+    set statusline+=Line:%l/%L[%p%%]\ \          " Line Number
+    set statusline+=Col:%v\ \                    " Col Number
+    set statusline+=Char:[%b][0x%B]              " current char
+  endif
 endif
 
 """"""""""""""""""""""""""""""
