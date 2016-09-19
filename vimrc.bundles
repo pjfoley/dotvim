@@ -23,7 +23,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'elzr/vim-json'
+Plugin 'elzr/vim-json', {'for' : 'json'}
 Plugin 'roidelapluie/vim-puppet'
 Plugin 'tpope/vim-repeat'
 Plugin 'honza/vim-snippets'
@@ -31,6 +31,22 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'Raimondi/delimitMate'
+
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'zchee/deoplete-go', { 'do': 'make'}
+else
+  Plugin 'Shougo/neocomplete.vim'
+endif
+
+Plugin 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'sickill/vim-monokai'
+Plugin 'justinj/vim-react-snippets'
+Plugin 'ternjs/tern_for_vim'
+
 
 if filereadable(expand("~/.vimrc.bundles.local"))
     source ~/.vimrc.bundles.local

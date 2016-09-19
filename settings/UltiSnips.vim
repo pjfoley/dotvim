@@ -1,4 +1,3 @@
-if exists(':UltiSnipsEdit')
-  let g:UltiSnipsSnippetsDir = "~/.vim/bundle/ultisnips/UltiSnips"
-endif
+let g:UltiSnipsSnippetDirectories = ['~/.vim/bundle/vim-snippets/UltiSnips', '~/.vim/UltiSnips', 'UltiSnips']
+let g:UltiSnipsExpandTrigger="<c-j>"
 
